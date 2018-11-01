@@ -43,12 +43,12 @@ def add_post():
 @app.route("/")
 def index():
     blog_posts= Post.query.all()
-    return render_template('blogPosts.html', blog_posts=blog_posts )
+    return render_template('blogPosts.html', blog_posts=blog_posts)
 
-@app.route("/blog")
+@app.route("/post")
 def blog():
-    return "blog!"
-
+    blog_post= Post.query.filter_by(id=request.args['id'])
+    return render_template('post.html', blog_post = blog_post)
 
 @app.route("/new")
 def new():

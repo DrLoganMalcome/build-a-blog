@@ -8,13 +8,12 @@
     {% for post in blog_posts: %}
       <li>
         <hr>
-          <a href="/post">
+          <a href="/post?id={{post.id}}">
             <div>
               <p>{{ post.title }}</p>
               <p>{{ post.text }}</p>
             </div>
           </a>
-        
       </li>
     {% endfor %}
   </ul>
