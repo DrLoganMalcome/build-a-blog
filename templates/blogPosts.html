@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Blog Posts</h1>
+{% if blog_posts|length > 0 %}
+  <ul>
+    {% for post in blog_posts: %}
+      <li>
+        <hr>
+          <a href="/post">
+            <div>
+              <p>{{ post.title }}</p>
+              <p>{{ post.text }}</p>
+            </div>
+          </a>
+        
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+{% endblock %}
