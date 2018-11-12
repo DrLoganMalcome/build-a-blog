@@ -39,6 +39,12 @@ def add_post():
     db.session.commit()
     return redirect('/')
 
+@app.route("/delete")
+def delete():
+    blog_post = Post.query.filter_by(id=request.args['id'])
+    db.session.delete(blog_post)
+    db.session.commit()
+    return redirect("/")
 
 @app.route("/")
 def index():
